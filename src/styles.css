@@ -1,0 +1,421 @@
+:root {
+  --bg: #0b162f;
+  --fg: #f6f8ff;
+  --accent: #7e4bff;
+  --accent-2: #ffd500;
+  --card: rgba(255, 255, 255, 0.08);
+  --muted: #c8cffd;
+  --shadow: 0 16px 40px rgba(3, 10, 30, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+  color: var(--fg);
+  background: linear-gradient(135deg, #040c22, #1f1841);
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.hero {
+  border-radius: 28px;
+  background: linear-gradient(170deg, rgba(34, 35, 59, 0.8), rgba(12, 11, 49, 0.8));
+  padding: 2.2rem;
+  text-shadow: 0 6px 20px rgba(6, 28, 80, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow);
+  margin-bottom: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 7vw, 4.4rem);
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.stats-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  margin-bottom: 1.8rem;
+}
+
+.stat-card {
+  border-radius: 20px;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: var(--shadow);
+  padding: 1.2rem;
+  min-height: 120px;
+  backdrop-filter: blur(4px);
+}
+
+.stat-card h3 {
+  margin: 0 0 0.55rem;
+  color: #e1e7ff;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+}
+
+.stat-card p,
+.stat-card span {
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
+.narrative {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  padding: 1.4rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.8rem;
+}
+
+.cta-row {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-weight: 700;
+  color: var(--bg);
+  padding: 0.82rem 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 12px;
+  min-width: 170px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+.btn.primary {
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  color: #02030d;
+}
+
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--fg);
+}
+
+.page-team-login h2,
+.page-dashboard h2 {
+  margin-top: 0;
+}
+
+.team-login-form {
+  width: min(450px, 100%);
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.team-login-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #dde5ff;
+  letter-spacing: 0.04em;
+}
+
+.team-login-form input {
+  margin-top: 0.45rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(20, 30, 64, 0.9);
+  color: var(--fg);
+  padding: 0.76rem 0.95rem;
+  outline: none;
+}
+
+.team-login-form input:focus {
+  border-color: #8c95ff;
+  box-shadow: 0 0 0 2px rgba(137, 147, 255, 0.2);
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.dashboard-card {
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(17, 25, 53, 0.82);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.dashboard-card h3 {
+  margin: 0 0 0.6rem;
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 1.3rem 0.75rem 2rem;
+  }
+
+  .hero {
+    padding: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 8vw, 3.4rem);
+  }
+
+  .btn {
+    min-width: 130px;
+    padding: 0.72rem 1rem;
+  }
+}
+
+/* Front Page Specific Text Highlights */
+.page-understand .hero h1 {
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(126, 75, 255, 0.9), 0 0 30px rgba(126, 75, 255, 0.7), 0 0 45px rgba(126, 75, 255, 0.4);
+}
+
+.page-understand .subtitle {
+  color: #ffd500;
+  text-shadow: 0 0 10px rgba(255, 213, 0, 0.6), 0 0 20px rgba(255, 213, 0, 0.3);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.page-understand .stat-card h3 {
+  color: #aeb9ff;
+  text-shadow: 0 0 10px rgba(174, 185, 255, 0.5);
+}
+
+.page-understand .stat-card p,
+.page-understand .stat-card span {
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.7), 0 0 25px rgba(255, 255, 255, 0.3);
+}
+
+.page-understand .narrative h2 {
+  color: #00ffff;
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.8), 0 0 25px rgba(0, 255, 255, 0.4);
+  margin-bottom: 0.8rem;
+}
+
+.page-understand .narrative p {
+  line-height: 1.6;
+  font-size: 1.05rem;
+  color: #e2e8ff;
+  text-shadow: 0 0 6px rgba(226, 232, 255, 0.3);
+}
+
+/* ── Team Login Centre & Neon Styles ─────────────── */
+.page-team-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+}
+
+.login-center-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: min(480px, 100%);
+  background: rgba(17, 25, 53, 0.88);
+  border: 1px solid rgba(126, 75, 255, 0.55);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  box-shadow:
+    0 0 0 1px rgba(126, 75, 255, 0.25),
+    0 0 30px rgba(126, 75, 255, 0.25),
+    0 0 60px rgba(126, 75, 255, 0.1),
+    0 20px 50px rgba(3, 10, 30, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.login-title {
+  margin: 0 0 0.4rem;
+  text-align: center;
+  font-size: 2rem;
+  color: #ffffff;
+  text-shadow:
+    0 0 12px rgba(126, 75, 255, 1),
+    0 0 28px rgba(126, 75, 255, 0.7),
+    0 0 50px rgba(126, 75, 255, 0.4);
+}
+
+.login-subtitle {
+  text-align: center;
+  color: #c8cffd;
+  margin: 0 0 1.8rem;
+  font-size: 0.92rem;
+  text-shadow: 0 0 8px rgba(200, 207, 253, 0.3);
+}
+
+.page-team-login .team-login-form label {
+  color: #aeb9ff;
+  text-shadow: 0 0 8px rgba(174, 185, 255, 0.5);
+  letter-spacing: 0.05em;
+}
+
+.page-team-login .team-login-form input {
+  border: 1px solid rgba(126, 75, 255, 0.5);
+  background: rgba(10, 15, 45, 0.8);
+  color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.page-team-login .team-login-form input:focus {
+  border-color: #7e4bff;
+  box-shadow:
+    0 0 0 2px rgba(126, 75, 255, 0.35),
+    0 0 14px rgba(126, 75, 255, 0.3);
+  outline: none;
+}
+
+/* ══════════════════════════════════════════════
+   GLOBAL NEON HOVER / FOCUS GLOW EFFECTS
+   (inputs, selects, buttons, cards, table rows)
+══════════════════════════════════════════════ */
+
+/* All text inputs & selects site-wide */
+input,
+select,
+textarea {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: rgba(126, 75, 255, 0.85) !important;
+  box-shadow:
+    0 0 0 2px rgba(126, 75, 255, 0.3),
+    0 0 15px rgba(126, 75, 255, 0.35),
+    0 0 30px rgba(126, 75, 255, 0.15) !important;
+}
+
+input:hover,
+select:hover {
+  border-color: rgba(126, 75, 255, 0.6) !important;
+  box-shadow: 0 0 10px rgba(126, 75, 255, 0.2) !important;
+}
+
+/* Buttons – primary glow on hover */
+.btn.primary {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 1px rgba(126, 75, 255, 0.5),
+    0 0 20px rgba(126, 75, 255, 0.55),
+    0 0 45px rgba(126, 75, 255, 0.25),
+    0 8px 20px rgba(0, 0, 0, 0.4);
+  filter: brightness(1.1);
+}
+
+/* Buttons – secondary cyan glow on hover */
+.btn.secondary {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.btn.secondary:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 255, 255, 0.5);
+  box-shadow:
+    0 0 12px rgba(0, 255, 255, 0.3),
+    0 0 28px rgba(0, 255, 255, 0.15),
+    0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Dashboard cards – purple glow on hover */
+.dashboard-card {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.dashboard-card:hover {
+  border-color: rgba(126, 75, 255, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(126, 75, 255, 0.2),
+    0 0 22px rgba(126, 75, 255, 0.3),
+    0 0 50px rgba(126, 75, 255, 0.12),
+    0 18px 40px rgba(3, 10, 30, 0.5);
+  transform: translateY(-3px);
+}
+
+/* Stat cards on front page */
+.stat-card {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: rgba(255, 213, 0, 0.45);
+  box-shadow:
+    0 0 15px rgba(255, 213, 0, 0.3),
+    0 0 35px rgba(255, 213, 0, 0.12),
+    0 16px 40px rgba(3, 10, 30, 0.45);
+  transform: translateY(-3px);
+}
+
+/* Table rows – subtle teal glow on hover */
+tbody tr {
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+tbody tr:hover {
+  background: rgba(0, 255, 255, 0.05);
+  box-shadow: inset 0 0 0 1px rgba(0, 255, 255, 0.1);
+}
+
+/* Login card glow intensifies on hover */
+.login-card {
+  transition: box-shadow 0.35s ease;
+}
+
+.login-card:hover {
+  box-shadow:
+    0 0 0 1px rgba(126, 75, 255, 0.5),
+    0 0 45px rgba(126, 75, 255, 0.4),
+    0 0 80px rgba(126, 75, 255, 0.18),
+    0 24px 60px rgba(3, 10, 30, 0.7);
+}
