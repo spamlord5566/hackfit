@@ -30,8 +30,7 @@ export default function Understand() {
       <div className="narrative">
         <h2>Build, Pitch, and Win!</h2>
         <p>
-          A creative platform for college enthusiasts. Develop ideas, collaborate in teams, and present your best solution.
-          This interface is designed to follow a modern gradient style with an engaging, responsive route flow.
+          Join HackFit 4.0, a high-octane 36-hour national hackathon where innovation meets execution. Bring your wildest tech ideas to life, compete with top talent from across the country, and pitch your final prototype for a chance to win from a ₹60,000 prize pool.
         </p>
       </div>
 
